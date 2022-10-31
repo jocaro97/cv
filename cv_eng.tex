@@ -1,0 +1,160 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX:
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{%
+  colorlinks=true,% hyperlinks will be coloured
+}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{0.01em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox }{        % Box to align text
+		\textit{#1} }       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1} }		   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{Black}{%
+			\parbox{6em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\ProjectEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Project name
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \par
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{}{\ \textwidth}
+%	\vspace*{-5.5em}
+	%\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{Johanna Capote Robayna}
+\MySlogan{Curriculum Vitae}
+
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Personal details}{}
+\PersonalEntry{Phone}{(+34) 699 34 20 69}
+\PersonalEntry{Mail}{\url{johanna.capoterobayna@gmail.com}}
+\PersonalEntry{Github}{\url{https://github.com/jocaro97}}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\ProjectEntry{Bachelor's Degree in Computer Science \textit{University of Granada.}}{2015-2020}{}{Focusing in computing and intelligent systems.}
+\ProjectEntry{Bachelor's Degree in Mathematics \textit{University of Granada.}}{2015-2020}{}{}
+
+%%% Prizes
+%%% ------------------------------------------------------------
+\NewPart{Prizes}{}
+\ProjectEntry{Math Olympics Thales}{2011}{}{Regional winner and country finalist.}
+\ProjectEntry{Chess Spain Championship}{2007}{}{Champion of Spain chess tournament.}
+%\ProjectEntry{Chess-Blitz Spain Championship}{2013}{}{Champion of Spain chess blitz tournament.}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Projects}{}
+\ProjectEntry{Google ranking algorithm}{Currently}{}{Final degree project about ranking algorithm in Google. In particular, analize the underlying algebraic structure of the algorithm and implement it on Python.}
+\ProjectEntry{Member and collaborator of LibreIM}{Currently}{}{LibreIM is a nonprofit organization dedicated to the study and dissemination of computer science and mathematics, in which I've collaborated collecting notes about different subjects. \url{https://github.com/libreim}}
+
+%%% LATST JOBS
+%%% ------------------------------------------------------------
+\NewPart{Work experience}{}
+\ProjectEntry{AI \& BI}{2020 - Present}{}{I am working as a AI \& BI in Movired2000 S.L. I have developed projects using Machine Learning and Bussines Intelligence's tools like \textit{QlikSense} and \textit{scikit-learn}.}
+% \ProjectEntry{Math teacher}{2017 - Present}{}{I am working as a math teacher in private Maths lessons.}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+
+\SkillsEntry{Languages}{Spanish (mother tongue), English.}
+\SkillsEntry{C++, Python.}{Most used language.}
+\SkillsEntry{\\C. \\ Java,Ruby. }{Used them for university projects.}
+\SkillsEntry{SQL}{}
+\SkillsEntry{Software}{\LaTeX.}
+\SkillsEntry{OpenCV}{Used it for university projects in Computer Vision subject.}
+\end{document}
